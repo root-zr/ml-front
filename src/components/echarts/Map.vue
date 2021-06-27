@@ -1,5 +1,5 @@
 <template>
-  <div class="com-comtainer" @dblclick="revertMap">
+  <div class="com-comtainer">
     <div class="com-chart" ref="map"></div>
   </div>
 
@@ -12,56 +12,11 @@ import { getProvinceMapInfo } from '@/utils/map_utils'
 export default {
   data(){
     return{
-      chartInstance: null,
-      allData: [
-        {'name':'大型网点',
-          'children':[
-            {'name':'大型网点1','value':[114.31,30.52]},
-            {'name':'大型网点2','value':[116.39,39.91]},
-            {'name':'大型网点3','value':[108.93,34.23]},
-            {'name':'大型网点4','value':[113.27,23.15]},
-            {'name':'大型网点5','value':[121.48,31.40]},
-            {'name':'大型网点6','value':[112.98,28.25]},
-          ],
-          'itemStyle':{
-            "shadowBlur": 10,
-            "shadowColor": '#333'}
-        },{'name':'中型网点',
-          'children':[
-            {'name':'中型网点1','value':[114.53,38.03]},
-            {'name':'中型网点2','value':[106.24,38.47]},
-            {'name':'中型网点3','value':[88.31,43.36]},
-            {'name':'中型网点4','value':[106.39,26.50]},
-            {'name':'中型网点5','value':[100.16,25.36]}
-          ],
-          'itemStyle':{
-            "shadowBlur": 10,
-            "shadowColor": '#333'}
-        },{'name':'小型网点',
-          'children':[
-            {'name':'小型网点1','value':[115.00,25.51]},
-            {'name':'小型网点2','value':[100.13,26.52]},
-            {'name':'小型网点3','value':[104.06,30.39]},
-            {'name':'小型网点4','value':[112.39,37.89]},
-            {'name':'小型网点5','value':[111.80,40.77]},
-            {'name':'小型网点6','value':[126.51,45.54]},
-            {'name':'小型网点7','value':[105.06,38.39]},
-            {'name':'小型网点8','value':[107.39,35.89]},
-            {'name':'小型网点9','value':[90.31,37.36]},
-            {'name':'小型网点10','value':[85.39,35.50]},
-            {'name':'小型网点11','value':[100.16,25.36]}
-
-          ],
-          'itemStyle':{
-            "shadowBlur": 10,
-            "shadowColor": '#333'}
-        }
-      ],
+      chartInstance: null
     }
   },
   mounted() {
-    this.initChart()
-    this.getData()
+    this.init()
     window.addEventListener('resize', this.screenAdapter)
     // 主动触发 响应式配置
     this.screenAdapter()
@@ -70,77 +25,71 @@ export default {
     window.removeEventListener('resize', this.screenAdapter)
   },
   methods:{
-    async initChart(){
-      this.chartInstance = this.$echarts.init(this.$refs.map,'chalk')
-      const ret = require('../../assets/data/china.json')
-      // const ret = await axios.get('http://120.53.120.229:9997/map/china.json')
+    init(){
+      this.chartInstance = echarts.init(this.$refs.map);
+      var option;
 
-      this.$echarts.registerMap('china',ret)
-      const initOption={
-        title:{
-          text: '▎中国网点分布',
-          left:20,
-          top:20
+      const chinaJson = require('../../assets/data/china.json')
+
+      this.$echarts.registerMap('china', chinaJson);
+
+      option = {
+        title: {
+          text: '网店分布情况',
+          left: 'left'
         },
-        geo:{
-          type: 'map',
-          map: 'china',
-          // top: '5%',
-          // bottom: '5%'
-          itemStyle: {
-            // 地图的填充色
-            areaColor: '#13b0de',
-            // 省份的边框色
-            borderColor: '#fad904',
-          },
-          label: {
-            // show: true,
-            color: 'white',
-            formatter: `{a}`,
-          },
-        }
-      }
-      this.chartInstance.setOption(initOption)
-      this.chartInstance.on('click',async arg=>{
-        const provinceInfo = getProvinceMapInfo(arg.name)
-        const ret = await axios.get('http://120.53.120.229:9997'+provinceInfo.path)
-        this.$echarts.registerMap(provinceInfo.key,ret.data)
-        const changeOption = {
-          geo:{
-            map: provinceInfo.key
+        tooltip: {
+          trigger: 'item',
+          showDelay: 0,
+          transitionDuration: 0.2,
+          formatter: function (params) {
+            var value = (params.value + '').split('.');
+            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+            return params.seriesName + '<br/>' + params.name + ': ' + value;
           }
-        }
-        this.chartInstance.setOption(changeOption)
-      })
-    },
-    async getData(){
-      this.updateChart();
-    },
-    updateChart(){
-      const legendArr = this.allData.map(item =>{
-        return item.name
-      })
-      const seriesArr = this.allData.map(item =>{
-        return{
-          type: 'effectScatter',
-          rippleEffect:{
-            scale:7,
-            brushType: 'stroke',
-            period:4,
-          },
-          name: item.name,
-          data: item.children,
-          coordinateSystem: 'geo',
-          itemStyle:item.itemStyle
-        }
-      })
-      const dataOption={
-        legend: {
-          data: legendArr
         },
-        series: seriesArr
-      }
-      this.chartInstance.setOption(dataOption)
+        visualMap: {
+          left: 'right',
+          min: 500000,
+          max: 38000000,
+          inRange: {
+            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+          },
+          text: ['High', 'Low'],           // 文本，默认为数值文本
+          calculable: true
+        },
+        toolbox: {
+          show: true,
+          orient: 'vertical',
+          left: 'left',
+          top: 'top',
+          feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+          }
+        },
+        series: [
+          {
+            // name: '页面',
+            type: 'map',
+            roam: true,
+            map: 'china',
+            emphasis: {
+              label: {
+                show: true
+              }
+            },
+            data:[
+              {name: '广东', value: 4822023},
+              {name: '黑龙江', value: 731449},
+              {name: '广西', value: 6553255},
+            ]
+          }
+        ]
+      };
+
+      this.chartInstance.setOption(option);
 
     },
     screenAdapter() {
@@ -170,14 +119,6 @@ export default {
       this.chartInstance.setOption(adapterOption)
       this.chartInstance.resize()
     },
-    revertMap(){
-      const revertOption = {
-        geo:{
-          map:'china'
-        }
-      }
-      this.chartInstance.setOption(revertOption)
-    }
   }
 }
 </script>
