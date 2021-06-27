@@ -1,0 +1,43 @@
+/*全局样式*/
+HTML,body,#app{
+  /*width: 100%;*/
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+}
+.el-card{
+  box-shadow: 0 1px 1px rgba(0,8,10,0.15) !important;
+}
+
+/*表格样式*/
+.el-table{
+  margin-top: 15px;
+  font-size: 12px;
+  min-width: 350px;
+}
+
+.com-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.com-comtainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.com-chart {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #66bae7;
+}
+
+canvas {
+  border-radius: 20px;
+}
+
+
