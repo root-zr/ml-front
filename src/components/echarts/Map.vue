@@ -42,16 +42,17 @@ export default {
           trigger: 'item',
           showDelay: 0,
           transitionDuration: 0.2,
-          formatter: function (params) {
-            var value = (params.value + '').split('.');
-            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-            return params.seriesName + '<br/>' + params.name + ': ' + value;
-          }
+          formatter: "{b}: {c}"
+          // function (params) {
+          //   var value = (params.value + '').split('.');
+          //   value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
+          //   return params.seriesName + '<br/>' + params.name + ': ' + value;
+          // }
         },
         visualMap: {
           left: 'right',
-          min: 500000,
-          max: 38000000,
+          min: 0,
+          max: 70,
           inRange: {
             color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
           },
@@ -81,9 +82,40 @@ export default {
               }
             },
             data:[
-              {name: '广东', value: 4822023},
-              {name: '黑龙江', value: 731449},
-              {name: '广西', value: 6553255},
+              {'name': '北京', 'value': 13},
+              {'name': '广东', 'value': 63},
+              {'name': '山东', 'value': 13},
+              {'name': '江苏', 'value': 12},
+              {'name': '河南', 'value': 8},
+              {'name': '上海', 'value': 26},
+              {'name': '河北', 'value': 2},
+              {'name': '浙江', 'value': 18},
+              {'name': '陕西', 'value': 2},
+              {'name': '湖南', 'value': 4},
+              {'name': '重庆', 'value': 1},
+              {'name': '福建', 'value': 12},
+              {'name': '天津', 'value': 0},
+              {'name': '云南', 'value': 3},
+              {'name': '四川', 'value': 6},
+              {'name': '广西', 'value': 2},
+              {'name': '安徽', 'value': 4},
+              {'name': '海南', 'value': 1},
+              {'name': '江西', 'value': 2},
+              {'name': '湖北', 'value': 3},
+              {'name': '山西', 'value': 2},
+              {'name': '辽宁', 'value': 3},
+              {'name': '台湾', 'value': 0},
+              {'name': '黑龙江', 'value': 0},
+              {'name': '内蒙古', 'value': 0},
+              {'name': '香港', 'value': 0},
+              {'name': '澳门', 'value': 0},
+              {'name': '贵州', 'value': 1},
+              {'name': '甘肃', 'value': 0},
+              {'name': '青海', 'value': 0},
+              {'name': '新疆', 'value': 2},
+              {'name': '西藏', 'value': 0},
+              {'name': '吉林', 'value': 0},
+              {'name': '宁夏', 'value': 0}
             ]
           }
         ]

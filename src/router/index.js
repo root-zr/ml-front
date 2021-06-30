@@ -5,6 +5,7 @@ import Screen from "@/views/Screen";
 import Map from "@/components/echarts/Map";
 import Example from "@/components/echarts/Example";
 import screenNew from "@/views/screen_new";
+import echart5 from "@/components/echarts/Echart5"
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,7 @@ const routes = [
     component: Home
   },{
     path: '/home',
+    redirect: '/screenNew',
     component: Home,
     children:[
       {path: '/screenNew',component: screenNew}
@@ -30,7 +32,10 @@ const routes = [
   },{
     path: '/example',
     component: Example
-  },
+  },{
+    path: '/5',
+    component: echart5
+  }
 ]
 
 const router = new VueRouter({

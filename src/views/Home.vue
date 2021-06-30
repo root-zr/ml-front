@@ -7,21 +7,21 @@
       <el-container>
         <el-aside width='130px'>
           <el-menu 
-            :default-active="0" 
+            default-active="1" 
             text-color="white" 
             background-color="#3D515E" 
             style="height:750px" >
-            <el-menu-item index="0" @click="goScreen">
+            <el-menu-item index="0" >
+              <i class="el-icon-edit-outline"></i>
+              数据清洗
+            </el-menu-item>
+            <el-menu-item index="1" @click="goScreen">
               <i class="el-icon-pie-chart"></i>
               数据展示
             </el-menu-item>
-            <el-menu-item index="1">
-              <i class="el-icon-document-add"></i>
-              数据爬取
-            </el-menu-item>
             <el-menu-item index="2">
-              <i class="el-icon-edit-outline"></i>
-              数据清洗
+              <i class="el-icon-document-add"></i>
+              特征工程
             </el-menu-item>
             <el-menu-item index="3">
               <i class="el-icon-search"></i>
@@ -29,7 +29,7 @@
             </el-menu-item>
             <el-menu-item index="4">
               <i class="el-icon-s-data"></i>
-              特征工程
+              特征？
             </el-menu-item>
             <el-menu-item index="5">
               <i class="el-icon-data-line"></i>
@@ -37,7 +37,7 @@
             </el-menu-item>
           </el-menu>
         </el-aside>
-        <el-main style="background-color: #DEDEDE">
+        <el-main style="background-color: #F5F5F5">
           <router-view></router-view>
         </el-main>
       </el-container>
