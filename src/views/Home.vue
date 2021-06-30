@@ -4,13 +4,13 @@
       <el-header class="header">
         <el-col style="margin-top:1%">机器学习--淘宝商家信用</el-col>
       </el-header>
-      <el-container>
+      <el-container style="height:800px">
         <el-aside width='130px'>
           <el-menu 
             default-active="1" 
             text-color="white" 
             background-color="#3D515E" 
-            style="height:750px" >
+            style="height: 100%;" >
             <el-menu-item index="0" >
               <i class="el-icon-edit-outline"></i>
               数据清洗
@@ -19,17 +19,9 @@
               <i class="el-icon-pie-chart"></i>
               数据展示
             </el-menu-item>
-            <el-menu-item index="2">
+            <el-menu-item index="2" @click="goFeature">
               <i class="el-icon-document-add"></i>
               特征工程
-            </el-menu-item>
-            <el-menu-item index="3">
-              <i class="el-icon-search"></i>
-              特征分析
-            </el-menu-item>
-            <el-menu-item index="4">
-              <i class="el-icon-s-data"></i>
-              特征？
             </el-menu-item>
             <el-menu-item index="5">
               <i class="el-icon-data-line"></i>
@@ -57,6 +49,9 @@ export default {
   methods:{
     goScreen(){
       this.$router.push('/screenNew')
+    },
+    goFeature(){
+      this.$router.push('/featureEngineering')
     }
   }
 }
