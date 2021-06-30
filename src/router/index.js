@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Screen from "@/views/Screen";
 import Map from "@/components/echarts/Map";
 import Example from "@/components/echarts/Example";
+import screenNew from "@/views/screen_new";
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,10 @@ const routes = [
     component: Home
   },{
     path: '/home',
-    component: Home
+    component: Home,
+    children:[
+      {path: '/screenNew',component: screenNew}
+    ]
   },{
     path: '/',
     redirect: '/home'
