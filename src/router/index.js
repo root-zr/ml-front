@@ -7,7 +7,8 @@ import Example from "@/components/echarts/Example";
 import screenNew from "@/views/screen_new";
 import echart5 from "@/components/echarts/Echart5";
 import feature from "@/views/featureEngineer";
-import nlp from "@/components/feature/nlp";
+import clean from "@/views/dataCleaning";
+import cluster from "@/components/cluster";
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,8 @@ const routes = [
     children:[
       {path: '/screenNew',component: screenNew},
       {path: '/featureEngineering', component: feature},
+      {path: '/dataCleaning', component: clean},
+      {path: '/modelResult', component: cluster},
     ]
   },{
     path: '/',
@@ -39,8 +42,8 @@ const routes = [
     path: '/5',
     component: echart5
   },{
-    path: '/nlp',
-    component: nlp
+    // path: '/nlp',
+    // component: nlp
   },
 ]
 

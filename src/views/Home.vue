@@ -11,7 +11,7 @@
             text-color="white" 
             background-color="#3D515E" 
             style="height: 100%;" >
-            <el-menu-item index="0" >
+            <el-menu-item index="0" @click="goClean">
               <i class="el-icon-edit-outline"></i>
               数据清洗
             </el-menu-item>
@@ -23,7 +23,7 @@
               <i class="el-icon-document-add"></i>
               特征工程
             </el-menu-item>
-            <el-menu-item index="5">
+            <el-menu-item index="3" @click="goResult">
               <i class="el-icon-data-line"></i>
               模型结果
             </el-menu-item>
@@ -52,6 +52,12 @@ export default {
     },
     goFeature(){
       this.$router.push('/featureEngineering')
+    },
+    goClean(){
+      this.$router.push('/dataCleaning')
+    },
+    goResult(){
+      this.$router.push('/modelResult')
     }
   }
 }

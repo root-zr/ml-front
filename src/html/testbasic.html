@@ -1,25 +1,27 @@
-<template>
-   <div id="b105f8ab7b164d2893914c4595645c53" class="chart-container" style="width:900px; height:500px;"></div>
-</template>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
 
-<script>
-// import 'echarts-wordcloud'
-
-export default {
-  name:"nlp",
-  mounted(){
-        var chart_b105f8ab7b164d2893914c4595645c53 = this.$echarts.init(
+</head>
+<body>
+    <div id="b105f8ab7b164d2893914c4595645c53" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_b105f8ab7b164d2893914c4595645c53 = echarts.init(
             document.getElementById('b105f8ab7b164d2893914c4595645c53'), 'white', {renderer: 'canvas'});
         var option_b105f8ab7b164d2893914c4595645c53 = {
-        "animation": true,
-        "animationThreshold": 2000,
-        "animationDuration": 1000,
-        "animationEasing": "cubicOut",
-        "animationDelay": 0,
-        "animationDurationUpdate": 300,
-        "animationEasingUpdate": "cubicOut",
-        "animationDelayUpdate": 0,
-        "color": [
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
         "#c23531",
         "#2f4554",
         "#61a0a8",
@@ -44,12 +46,11 @@ export default {
         "#1d953f",
         "#6950a1",
         "#918597"
-        ],
-        "series": [
+    ],
+    "series": [
         {
             "type": "wordCloud",
             "name": "\u70ed\u8bcd\u4e91\u56fe",
-            "drawOutOfBound": "true",
             "shape": "diamond",
             "rotationRange": [
                 0,
@@ -66,7 +67,9 @@ export default {
                     "name": "\u4e0d\u9519",
                     "value": 574,
                     "textStyle": {
+                        "normal": {
                             "color": "rgb(144,71,41)"
+                        }
                     }
                 },
                 {
@@ -39723,15 +39726,8 @@ export default {
             }
         }
     ]
-    };
+};
         chart_b105f8ab7b164d2893914c4595645c53.setOption(option_b105f8ab7b164d2893914c4595645c53);
-  },
-  components: {
-
-  }
-}
-</script>
-
-<style>
-
-</style>
+    </script>
+</body>
+</html>

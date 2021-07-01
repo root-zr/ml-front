@@ -1,5 +1,5 @@
 <template>
-  <div id="9066b253066a484d978d88cb727dd91b" class="chart-container" style="width:1280px; height:800px;"></div>
+  <div id="9066b253066a484d978d88cb727dd91b" class="chart-container" style="width:1280px; height:650px;"></div>
 </template>
 
 <script>
