@@ -10,6 +10,7 @@ import feature from "@/views/featureEngineer";
 import clean from "@/views/dataCleaning";
 import cluster from "@/components/cluster";
 
+import nlp from "@/components/feature/nlp";
 Vue.use(VueRouter)
 
 const routes = [
@@ -45,6 +46,7 @@ const routes = [
     // path: '/nlp',
     // component: nlp
   },
+
 ]
 
 const router = new VueRouter({
