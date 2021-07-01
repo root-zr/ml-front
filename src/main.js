@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
 
+import * as echarts from 'echarts';
+Vue.prototype.$echarts = echarts
 
 
 //引入全局样式

@@ -3,25 +3,23 @@
 </template>
 
 <script>
+import 'echarts-wordcloud'
+
 export default {
   name:"nlp",
   mounted(){
-      this.getData();
-  },
-  methods: {
-      getData(){
-        var chart_b105f8ab7b164d2893914c4595645c53 = echarts.init(
+        var chart_b105f8ab7b164d2893914c4595645c53 = this.$echarts.init(
             document.getElementById('b105f8ab7b164d2893914c4595645c53'), 'white', {renderer: 'canvas'});
         var option_b105f8ab7b164d2893914c4595645c53 = {
-    "animation": true,
-    "animationThreshold": 2000,
-    "animationDuration": 1000,
-    "animationEasing": "cubicOut",
-    "animationDelay": 0,
-    "animationDurationUpdate": 300,
-    "animationEasingUpdate": "cubicOut",
-    "animationDelayUpdate": 0,
-    "color": [
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "color": [
         "#c23531",
         "#2f4554",
         "#61a0a8",
@@ -46,11 +44,12 @@ export default {
         "#1d953f",
         "#6950a1",
         "#918597"
-    ],
-    "series": [
+        ],
+        "series": [
         {
             "type": "wordCloud",
             "name": "\u70ed\u8bcd\u4e91\u56fe",
+            "drawOutOfBound": "true",
             "shape": "diamond",
             "rotationRange": [
                 0,
@@ -67,9 +66,7 @@ export default {
                     "name": "\u4e0d\u9519",
                     "value": 574,
                     "textStyle": {
-                        "normal": {
                             "color": "rgb(144,71,41)"
-                        }
                     }
                 },
                 {
@@ -39726,9 +39723,8 @@ export default {
             }
         }
     ]
-};
+    };
         chart_b105f8ab7b164d2893914c4595645c53.setOption(option_b105f8ab7b164d2893914c4595645c53);
-      }
   },
   components: {
 

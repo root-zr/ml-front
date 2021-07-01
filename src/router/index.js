@@ -7,6 +7,7 @@ import Example from "@/components/echarts/Example";
 import screenNew from "@/views/screen_new";
 import echart5 from "@/components/echarts/Echart5";
 import feature from "@/views/featureEngineer";
+import nlp from "@/components/feature/nlp";
 
 Vue.use(VueRouter)
 
@@ -37,7 +38,10 @@ const routes = [
   },{
     path: '/5',
     component: echart5
-  }
+  },{
+    path: '/nlp',
+    component: nlp
+  },
 ]
 
 const router = new VueRouter({

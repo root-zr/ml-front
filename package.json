@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "echarts": "^5.1.2",
+    "echarts": "^5.0.1",
+    "echarts-wordcloud": "^2.0.0",
     "element-ui": "^2.4.5",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
