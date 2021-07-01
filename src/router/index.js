@@ -16,7 +16,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: Home
+    redirect: '/home'
   },{
     path: '/home',
     redirect: '/screenNew',
@@ -27,9 +27,6 @@ const routes = [
       {path: '/dataCleaning', component: clean},
       {path: '/modelResult', component: cluster},
     ]
-  },{
-    path: '/',
-    redirect: '/home'
   },{
     path: '/screen',
     component: Screen
