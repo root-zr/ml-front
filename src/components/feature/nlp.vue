@@ -2,10 +2,10 @@
     <div class="result">
         <el-tabs type="border-card" v-model="name">
             <el-tab-pane label="热词云图_电器" name="0">
-                <div ref="chart1" style="width: 800px;height:600px;"></div>
+                <div ref="chart1" style="width: 1280px;height:600px;"></div>
             </el-tab-pane>
             <el-tab-pane label="热词云图_食品" name="1">
-                <div ref="chart2" style="width: 800px;height:600px;" class="charts-two"></div>
+                <div ref="chart2" style="width: 1280px;height:600px;" class="charts-two"></div>
             </el-tab-pane>
 
         </el-tabs>

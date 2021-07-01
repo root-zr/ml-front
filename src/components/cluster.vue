@@ -3748,7 +3748,7 @@ export default {
         }
     ],
     "tooltip": {
-        "show": false,
+        "show": true,
         "trigger": "item",
         "triggerOn": "mousemove|click",
         "axisPointer": {

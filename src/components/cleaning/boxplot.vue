@@ -245,7 +245,7 @@ export default {
     ],
     "title": [
         {
-            "text": "\u5e97\u94fa\u6570\u636e\u5f02\u5e38\u503c",
+            "text": "店铺商品数据异常值（以10为底取对数）",
             "padding": 5,
             "itemGap": 10
         }

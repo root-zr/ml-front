@@ -42,11 +42,7 @@ const routes = [
   },{
     path: '/5',
     component: echart5
-  },{
-    // path: '/nlp',
-    // component: nlp
   },
-
 ]
 
 const router = new VueRouter({
