@@ -1,8 +1,8 @@
 <template>
   <div class="box">
-    <div id="f6d48fa1f7f945169738ee777290d2b8" class="chart-container" style="width:950px; height:250px;"></div>
-    <div id="dfa9bb8d79c54c41b55f4a4a31437e5d" class="chart-container" style="width:950px; height:250px;"></div>
-    <div id="7f42c984056946ddaff7b49fea297877" class="chart-container" style="width:950px; height:250px;"></div>
+    <div id="3398f0f91c7e48f1814571f4db9713fd" class="chart-container" style="width:950px; height:250px;"></div>
+    <div id="eef4efdb9e8840bea4ea579b7f2f0a4f" class="chart-container" style="width:950px; height:250px;"></div>
+    <div id="8ec923f4497e4123b693ce9411396979" class="chart-container" style="width:950px; height:250px;"></div>
   </div>
 </template>
 
@@ -10,9 +10,9 @@
 export default {
   name: 'miss',
   mounted(){
-      var chart_f6d48fa1f7f945169738ee777290d2b8 = echarts.init(
-            document.getElementById('f6d48fa1f7f945169738ee777290d2b8'), 'white', {renderer: 'canvas'});
-        var option_f6d48fa1f7f945169738ee777290d2b8 = {
+      var chart_3398f0f91c7e48f1814571f4db9713fd = echarts.init(
+            document.getElementById('3398f0f91c7e48f1814571f4db9713fd'), 'white', {renderer: 'canvas'});
+        var option_3398f0f91c7e48f1814571f4db9713fd = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -45,7 +45,7 @@ export default {
                 50
             ],
             "center": [
-                "20%",
+                "12.5%",
                 "50%"
             ],
             "label": {
@@ -60,9 +60,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 0,
-            "yAxisIndex": 0
+            }
         },
         {
             "type": "pie",
@@ -83,7 +81,7 @@ export default {
                 50
             ],
             "center": [
-                "35%",
+                "27.5%",
                 "50%"
             ],
             "label": {
@@ -98,9 +96,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 0,
-            "yAxisIndex": 0
+            }
         },
         {
             "type": "pie",
@@ -121,7 +117,7 @@ export default {
                 50
             ],
             "center": [
-                "50%",
+                "42.5%",
                 "50%"
             ],
             "label": {
@@ -136,9 +132,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 0,
-            "yAxisIndex": 0
+            }
         },
         {
             "type": "pie",
@@ -159,7 +153,7 @@ export default {
                 50
             ],
             "center": [
-                "65%",
+                "57.5%",
                 "50%"
             ],
             "label": {
@@ -174,9 +168,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 0,
-            "yAxisIndex": 0
+            }
         },
         {
             "type": "pie",
@@ -197,7 +189,7 @@ export default {
                 50
             ],
             "center": [
-                "80%",
+                "72.5%",
                 "50%"
             ],
             "label": {
@@ -212,9 +204,43 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
+            }
+        },
+        {
+            "type": "pie",
+            "name": "\u8d27\u53f7",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u975e\u7f3a\u5931",
+                    "value": 2489
+                },
+                {
+                    "name": "\u7f3a\u5931",
+                    "value": 29842
+                }
+            ],
+            "radius": [
+                30,
+                50
+            ],
+            "center": [
+                "87.5%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "fontSize": "10",
+                "formatter": "{b}: {d}%"
             },
-            "xAxisIndex": 0,
-            "yAxisIndex": 0
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
         }
     ],
     "legend": [
@@ -257,12 +283,12 @@ export default {
         }
     ]
 };
-        chart_f6d48fa1f7f945169738ee777290d2b8.setOption(option_f6d48fa1f7f945169738ee777290d2b8);
+        chart_3398f0f91c7e48f1814571f4db9713fd.setOption(option_3398f0f91c7e48f1814571f4db9713fd);
 
     //图2 
-    var chart_dfa9bb8d79c54c41b55f4a4a31437e5d = echarts.init(
-            document.getElementById('dfa9bb8d79c54c41b55f4a4a31437e5d'), 'white', {renderer: 'canvas'});
-        var option_dfa9bb8d79c54c41b55f4a4a31437e5d = {
+    var chart_eef4efdb9e8840bea4ea579b7f2f0a4f = echarts.init(
+            document.getElementById('eef4efdb9e8840bea4ea579b7f2f0a4f'), 'white', {renderer: 'canvas'});
+        var option_eef4efdb9e8840bea4ea579b7f2f0a4f = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -295,7 +321,7 @@ export default {
                 50
             ],
             "center": [
-                "20%",
+                "12.5%",
                 "50%"
             ],
             "label": {
@@ -310,9 +336,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 1,
-            "yAxisIndex": 1
+            }
         },
         {
             "type": "pie",
@@ -333,7 +357,7 @@ export default {
                 50
             ],
             "center": [
-                "35%",
+                "27.5%",
                 "50%"
             ],
             "label": {
@@ -348,9 +372,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 1,
-            "yAxisIndex": 1
+            }
         },
         {
             "type": "pie",
@@ -371,7 +393,7 @@ export default {
                 50
             ],
             "center": [
-                "50%",
+                "42.5%",
                 "50%"
             ],
             "label": {
@@ -386,9 +408,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 1,
-            "yAxisIndex": 1
+            }
         },
         {
             "type": "pie",
@@ -409,7 +429,7 @@ export default {
                 50
             ],
             "center": [
-                "65%",
+                "57.5%",
                 "50%"
             ],
             "label": {
@@ -424,9 +444,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 1,
-            "yAxisIndex": 1
+            }
         },
         {
             "type": "pie",
@@ -447,7 +465,7 @@ export default {
                 50
             ],
             "center": [
-                "80%",
+                "72.5%",
                 "50%"
             ],
             "label": {
@@ -462,9 +480,43 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
+            }
+        },
+        {
+            "type": "pie",
+            "name": "\u8d27\u53f7",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u975e\u7f3a\u5931",
+                    "value": 3744
+                },
+                {
+                    "name": "\u7f3a\u5931",
+                    "value": 33055
+                }
+            ],
+            "radius": [
+                30,
+                50
+            ],
+            "center": [
+                "87.5%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "fontSize": "10",
+                "formatter": "{b}: {d}%"
             },
-            "xAxisIndex": 1,
-            "yAxisIndex": 1
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
         }
     ],
     "legend": [
@@ -507,12 +559,11 @@ export default {
         }
     ]
 };
-        chart_dfa9bb8d79c54c41b55f4a4a31437e5d.setOption(option_dfa9bb8d79c54c41b55f4a4a31437e5d);
-
+        chart_eef4efdb9e8840bea4ea579b7f2f0a4f.setOption(option_eef4efdb9e8840bea4ea579b7f2f0a4f);
         //图3
-        var chart_7f42c984056946ddaff7b49fea297877 = echarts.init(
-            document.getElementById('7f42c984056946ddaff7b49fea297877'), 'white', {renderer: 'canvas'});
-        var option_7f42c984056946ddaff7b49fea297877 = {
+        var chart_8ec923f4497e4123b693ce9411396979 = echarts.init(
+            document.getElementById('8ec923f4497e4123b693ce9411396979'), 'white', {renderer: 'canvas'});
+        var option_8ec923f4497e4123b693ce9411396979 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -560,9 +611,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 2,
-            "yAxisIndex": 2
+            }
         },
         {
             "type": "pie",
@@ -598,9 +647,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 2,
-            "yAxisIndex": 2
+            }
         },
         {
             "type": "pie",
@@ -636,9 +683,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 2,
-            "yAxisIndex": 2
+            }
         },
         {
             "type": "pie",
@@ -674,9 +719,7 @@ export default {
                 "brushType": "stroke",
                 "scale": 2.5,
                 "period": 4
-            },
-            "xAxisIndex": 2,
-            "yAxisIndex": 2
+            }
         }
     ],
     "legend": [
@@ -719,7 +762,7 @@ export default {
         }
     ]
 };
-        chart_7f42c984056946ddaff7b49fea297877.setOption(option_7f42c984056946ddaff7b49fea297877);
+        chart_8ec923f4497e4123b693ce9411396979.setOption(option_8ec923f4497e4123b693ce9411396979);
   }
 }
 </script>
